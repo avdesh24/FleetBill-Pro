@@ -125,6 +125,11 @@ if uploaded_file is not None:
             value=0.0
         )
 
+        advance = st.number_input(
+            "Advance",
+            value=0.0
+        )
+
     # PAYMENT SUMMARY
     final_payable_amount = (
         total_amount
@@ -134,6 +139,7 @@ if uploaded_file is not None:
         - office_charge
         - gps
         - tds
+        - advance
     )
 
     payment_summary = pd.DataFrame({
@@ -145,6 +151,7 @@ if uploaded_file is not None:
             'Office Charge',
             'GPS',
             'TDS',
+            'Advance',
             'Final Payable Amount'
         ],
         'Amount': [
@@ -155,6 +162,7 @@ if uploaded_file is not None:
             office_charge,
             gps,
             tds,
+            advance,
             final_payable_amount
         ]
     })
